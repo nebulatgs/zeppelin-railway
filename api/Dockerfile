@@ -10,7 +10,7 @@ RUN nvm install
 RUN touch .env
 WORKDIR /app/ZeppelinBot/backend
 RUN npm ci
-RUN npm uninstall mysql && npm ci mysql2
+RUN npm uninstall mysql && npm i mysql2
 RUN touch bot.env api.env
 RUN sed -i '/database: process.env.DB_DATABASE,/a port: process.env.DB_PORT,' ormconfig.js
 RUN npm run build
