@@ -29,11 +29,13 @@ RUN git clone https://github.com/Dragory/ZeppelinBot.git
 WORKDIR /app/ZeppelinBot
 RUN nvm install
 RUN touch .env
+COPY railway.patch .
+RUN git apply railway.patch
 WORKDIR /app/ZeppelinBot/backend
 RUN npm ci
-RUN npm uninstall mysql && npm i mysql2
+# RUN npm uninstall mysql && npm i mysql2
 RUN touch bot.env api.env
-RUN sed -i '/database: process.env.DB_DATABASE,/a port: process.env.DB_PORT,' ormconfig.js
+# RUN sed -i '/database: process.env.DB_DATABASE,/a port: process.env.DB_PORT,' ormconfig.js
 RUN npm run migrate-prod
 RUN npm run build
 ENTRYPOINT ["/bin/bash", "--login", "-c", "npm run start-api-prod"]
