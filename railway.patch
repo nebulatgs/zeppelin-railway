@@ -3,8 +3,8 @@ index c62e60c1..b5219097 100644
 --- a/backend/ormconfig.js
 +++ b/backend/ormconfig.js
 @@ -33,6 +33,7 @@ module.exports = {
-   password: process.env.DB_PASSWORD,
    username: process.env.DB_USER,
+   password: process.env.DB_PASSWORD,
    database: process.env.DB_DATABASE,
 +  port: process.env.DB_PORT,
    charset: "utf8mb4",

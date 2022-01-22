@@ -29,9 +29,9 @@ RUN git clone https://github.com/Dragory/ZeppelinBot.git
 WORKDIR /app/ZeppelinBot
 RUN nvm install
 RUN touch .env
-WORKDIR /app/ZeppelinBot/backend
 COPY railway.patch .
 RUN git apply railway.patch
+WORKDIR /app/ZeppelinBot/backend
 RUN npm ci
 # RUN npm uninstall mysql && npm i mysql2
 RUN touch bot.env api.env
