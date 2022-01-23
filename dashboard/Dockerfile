@@ -35,4 +35,4 @@ RUN touch .env
 RUN npm run build
 WORKDIR /etc/nginx/sites-available
 COPY . .
-RUN ln -s /etc/nginx/sites-available/zeppelin /etc/nginx/conf.d/zeppelin
+RUN ln -s /etc/nginx/sites-available/zeppelin /etc/nginx/conf.d/default.conf
