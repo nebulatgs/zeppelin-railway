@@ -23,10 +23,10 @@ const accid = process.env.ACCOUNT_ID;
 
 const queries = [
   `INSERT INTO allowed_guilds (id, name, icon, owner_id) VALUES ("${srvid}", "${srvname}", null, "${owrid}");`,
-  `INSERT INTO configs (id, \`key\`, config, is_active, edited_by)`,
-  `VALUES (1, "global", "{\\"prefix\\": \\"!\\", \\"owners\\": [\\"${accid}\\"]}", true, "${accid}");`,
-  `INSERT INTO configs (id, \`key\`, config, is_active, edited_by)`,
-  `VALUES (2, "guild-${srvid}", "{\\"prefix\\": \\"!\\", \\"levels\\": {\\"${accid}\\": 100}, \\"plugins\\": { \\"utility\\": {}}}", true, "${accid}");`,
+  `INSERT INTO configs (id, \`key\`, config, is_active, edited_by)
+   VALUES (1, "global", "{\\"prefix\\": \\"!\\", \\"owners\\": [\\"${accid}\\"]}", true, "${accid}");`,
+  `INSERT INTO configs (id, \`key\`, config, is_active, edited_by)
+   VALUES (2, "guild-${srvid}", "{\\"prefix\\": \\"!\\", \\"levels\\": {\\"${accid}\\": 100}, \\"plugins\\": { \\"utility\\": {}}}", true, "${accid}");`,
   `INSERT INTO api_permissions (guild_id, target_id, type, permissions) VALUES (${srvid}, ${accid}, "USER", "OWNER");`,
   `SET GLOBAL time_zone = '+0:00';`,
 ]
