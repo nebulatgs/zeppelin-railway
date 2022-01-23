@@ -23,7 +23,7 @@ ARG thing
 RUN apt update
 RUN apt install curl build-essential git python3 python3-pip -y
 SHELL ["/bin/bash", "--login", "-c"]
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 WORKDIR /app
 RUN git clone https://github.com/Dragory/ZeppelinBot.git
 WORKDIR /app/ZeppelinBot
