@@ -1,0 +1,13 @@
+server {
+    listen 80; # replace with dashboard port
+    listen [::]:80; # replace with dashboard port
+
+    #server_name zep.kora.gg; #or domain on a live server
+
+    root /app/ZeppelinBot/dashboard;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
