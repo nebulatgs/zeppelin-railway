@@ -32,8 +32,7 @@ RUN nvm install
 RUN touch .env
 WORKDIR /app/ZeppelinBot/dashboard
 RUN npm ci
-RUN touch .env
-RUN echo cache
+RUN echo "API_URL=$API_URL" > .env
 RUN npm run build
 WORKDIR /etc/nginx/sites-available
 COPY . .
