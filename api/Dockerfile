@@ -36,6 +36,6 @@ RUN npm ci
 # RUN npm uninstall mysql && npm i mysql2
 RUN touch bot.env api.env
 # RUN sed -i '/database: process.env.DB_DATABASE,/a port: process.env.DB_PORT,' ormconfig.js
-RUN npm run migrate-prod
 RUN npm run build
+RUN npm run migrate-prod
 ENTRYPOINT ["/bin/bash", "--login", "-c", "npm run start-api-prod"]
