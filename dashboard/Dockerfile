@@ -32,6 +32,7 @@ RUN touch .env
 WORKDIR /app/ZeppelinBot/dashboard
 RUN npm ci
 RUN touch .env
+RUN echo cache
 RUN npm run build
 WORKDIR /etc/nginx/sites-available
 COPY . .
