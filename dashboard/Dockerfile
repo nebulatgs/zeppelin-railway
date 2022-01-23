@@ -33,5 +33,6 @@ WORKDIR /app/ZeppelinBot/dashboard
 RUN npm ci
 RUN touch .env
 RUN npm run build
-COPY zeppelin /etc/nginx/sites-enabled/zeppelin
-# RUN ln -s /etc/nginx/sites-available/zeppelin /etc/nginx/sites-enabled/zeppelin
+WORKDIR /etc/nginx/sites-available
+COPY . .
+RUN ln -s /etc/nginx/sites-available/zeppelin /etc/nginx/sites-enabled/zeppelin
