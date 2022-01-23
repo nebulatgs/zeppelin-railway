@@ -4,7 +4,7 @@ server {
 
     server_name zep.kora.gg; #or domain on a live server
 
-    root /app/ZeppelinBot/dashboard;
+    root /app/ZeppelinBot/dashboard/dist;
     index index.html;
 
     location / {
