@@ -1,13 +1,14 @@
 // get the client
-import { createConnection } from 'mysql2';
+import { createConnection } from "mysql2";
 
 // create the connection to database
 const connection = createConnection(process.env.MYSQL_URL);
 const zep_psw = process.env.DB_PASSWORD;
 const logResults = (err, results, fields) => {
-  console.log(results); // results contains rows returned by server
-  console.log(fields); // fields contains extra meta data about results, if available
-}
+  err ? console.log(err) : null;
+  results ? console.log(results) : null; // results contains rows returned by server
+  fields ? console.log(fields) : null; // fields contains extra meta data about results, if available
+};
 // const queries = [
 //   `CREATE USER IF NOT EXISTS \'zeppelin\'@\'localhost\' IDENTIFIED BY \'${zep_psw}\';`,
 //   `grant all on *.* to \'root\'@\'localhost\' with grant option;`,
@@ -29,6 +30,13 @@ const queries = [
    VALUES (2, "guild-${srvid}", "{\\"prefix\\": \\"!\\", \\"levels\\": {\\"${accid}\\": 100}, \\"plugins\\": { \\"utility\\": {}}}", true, "${accid}");`,
   `INSERT INTO api_permissions (guild_id, target_id, type, permissions) VALUES (${srvid}, ${accid}, "USER", "OWNER");`,
   `SET GLOBAL time_zone = '+0:00';`,
-]
+];
 
-queries.forEach(q => connection.query(q, logResults));
+const promises = queries.map((q) =>
+  new Promise((res, rej) => {
+    const r = connection.query(q, logResults);
+    r.on("result", (row, i) => res(row, i));
+    r.on("end", res());
+  })
+);
+await Promise.all(promises);
