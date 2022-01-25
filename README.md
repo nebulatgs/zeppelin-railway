@@ -1,12 +1,14 @@
 # Deploy [Zeppelin](https://zeppelin.gg) on [Railway](https://railway.app)
+### Prerequisites
+ - [Railway Account](https://railway.app?referralCode=nebula) - connected to GitHub
+ - [Discord Account](https://discord.com)
+ - [GitHub Account](https://github.com) - older than 30 days
+## 
+ Link your Discord account to Railway from account settings **[REQUIRED]**
 
- Create a [Railway account](https://railway.app?referralCode=nebula) using GitHub for login
+ Run the `/beta` slash command in the Railway Discord Server
 
- Link your [Discord account](https://discord.com) to Railway from account settings **[REQUIRED]**
-
- Run the `/beta` slash command in the Railway Discord
-
-## Set up project on Railway
+## Setting up the Railway Project
 
  Create a new project, provisioned with the MySQL Plugin ![Provision MySQL](/assets/images/provision_mysql.png "Provision MySQL")
 
@@ -14,7 +16,7 @@
 
  Fork this repo, we're gonna deploy it next
 
-## Create the API service
+## Creating the API Service
 
  Select New Service and pick GitHub Repo, selecting your fork
 
@@ -56,7 +58,7 @@ CLIENT_SECRET=<OAuth Client Secret>
 CLIENT_ID=<OAuth Client ID>
 ```
 
-## Create the Bot service
+## Creating the Bot Service
 
  Deploy your fork again by creating a new service, like you did for the api
 
@@ -75,7 +77,7 @@ OWNER_ID=<Server Owners User Snowflake>
 ACCOUNT_ID=<Your User Snowflake (from api step)>
 TOKEN=<Bot Token>
 ```
-## Initialize the Database
+## Initializing the Database
 
  Clone your fork of this repo, make sure Node.js and Railway CLI are installed
 
@@ -85,7 +87,7 @@ TOKEN=<Bot Token>
 
  Run `railway run node .` to set up the database, Control + C once it stops logging (i'll fix it later ok)
 
-## Create the Dashboard service
+## Creating the Dashboard Service
 
  Deploy your fork again by creating a new service, like you did for the bot
 
@@ -102,7 +104,7 @@ API_URL=https://example.up.railway.app
 PORT=80
 ```
 
-## Connect Dashboard and API
+## Connecting the Dashboard and API
 
  Go back to the api service and add a variable named `DASHBOARD_URL` set to the generated url for the dashboard
 ```bash
@@ -111,7 +113,7 @@ PORT=80
 DASHBOARD_URL=https://example.up.railway.app
 ```
 
-## Set OAuth Callback
+## Setting up OAuth Callbacks
 
  Go your bot's [Discord Application](https://discord.dev)
 
