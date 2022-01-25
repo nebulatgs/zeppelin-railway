@@ -1,4 +1,4 @@
-# Deploy [Zeppelin](https://zeppelin.gg) on [Railway](https://railway.app)
+# Deploy [Zeppelin](https://zeppelin.gg) on [Railway](https://railway.app?referralCode=nebula)
 ### Prerequisites
  - [Railway Account](https://railway.app?referralCode=nebula) - connected to GitHub
  - [Discord Account](https://discord.com)
@@ -50,7 +50,7 @@ PORT=8800
 OAUTH_CALLBACK_URL=https://${{ RAILWAY_STATIC_URL }}/auth/oauth-callback
 ```
 
- These variables will require you to create a [Discord Application](https://discord.dev)
+ These variables will require you to create a [Discord Application](https://discord.com/developers/applications)
 
  Go to the OAuth tab and copy these values
 ```bash
@@ -115,7 +115,7 @@ DASHBOARD_URL=https://example.up.railway.app
 
 ## Setting up OAuth Callbacks
 
- Go your bot's [Discord Application](https://discord.dev)
+ Go your bot's [Discord Application](https://discord.com/developers/applications)
 
  Under OAuth, add a callback url set to:
 ```bash
