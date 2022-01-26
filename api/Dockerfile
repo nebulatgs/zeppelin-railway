@@ -27,6 +27,7 @@ ARG DB_PASSWORD
 ARG DB_PORT
 ARG DB_USER
 ARG DB_HOST
+ARG KEY
 
 RUN npm run migrate-prod
 
@@ -36,6 +37,5 @@ ARG CLIENT_SECRET
 ARG OAUTH_CALLBACK_URL
 ARG CLIENT_ID
 ARG PORT
-ARG KEY
 
 ENTRYPOINT ["/bin/bash", "--login", "-c", "npm run start-api-prod"]
