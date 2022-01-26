@@ -8,7 +8,8 @@ SHELL ["/bin/bash", "--login", "-c"]
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 WORKDIR /app
-RUN git clone https://github.com/Dragory/ZeppelinBot.git
+ARG GIT_REPO=https://github.com/Dragory/ZeppelinBot.git
+RUN git clone $GIT_REPO
 
 WORKDIR /app/ZeppelinBot
 RUN nvm install

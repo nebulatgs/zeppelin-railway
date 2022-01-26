@@ -20,9 +20,20 @@
 
  Select New Service and pick GitHub Repo, selecting your fork
 
- Once the service has deployed (and failed to build), select it and go to Settings.
+ Once the service has deployed (it may fail to build, that is ok), select it and go to Settings.
 
  Rename the service if you would like and set the root directory to `/api`
+
+ **OPTIONAL: FOR USERS WITH CUSTOM FORKS OF ZEPPELIN**
+ 
+ *Note: may not build, as patchfiles are based off of upstream*
+ 
+ Create a variable name `GIT_REPO` and set it to the url to your custom fork of Zeppelin
+ ```bash
+ # Optional, for advanced users (replace with your custom fork)
+
+ GIT_REPO=https://github.com/Dragory/ZeppelinBot.git
+ ```
 
  Create a variable named `KEY` and set it to [32 random characters](https://passwordsgenerator.net/?length=32&symbols=0&numbers=1&lowercase=1&uppercase=1&similar=0&ambiguous=0&client=1&autoselect=0)
 ```bash
