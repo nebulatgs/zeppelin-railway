@@ -6,11 +6,10 @@ RUN apt install curl build-essential git python3 python3-pip -y
 SHELL ["/bin/bash", "--login", "-c"]
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-WORKDIR /app
-ARG GIT_REPO=https://github.com/Dragory/ZeppelinBot.git
-RUN git clone $GIT_REPO
-
 WORKDIR /app/ZeppelinBot
+ARG GIT_REPO=https://github.com/Dragory/ZeppelinBot.git
+RUN git clone $GIT_REPO .
+
 RUN nvm install
 RUN touch .env
 
