@@ -7,12 +7,6 @@
 - [Discord Account](https://discord.com)
 - [GitHub Account](https://github.com) - older than 30 days
 
-## 
-
-Link your Discord account to Railway from account settings **[REQUIRED]**
-
-Run the `/beta` slash command in the Railway Discord Server
-
 ## Setting up the Railway Project
 
 Create a new project, provisioned with the MySQL Plugin
@@ -171,12 +165,6 @@ CALLBACK=https://example.up.railway.app/auth/oauth-callback
   GitHub
 - [Discord Account](https://discord.com)
 - [GitHub Account](https://github.com) - older than 30 days
-
-## 
-
-Link your Discord account to Railway from account settings **[REQUIRED]**
-
-Run the `/beta` slash command in the Railway Discord Server
 
 ## Setting up the Railway Project
 
